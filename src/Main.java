@@ -1,5 +1,7 @@
 import task10.TrueObject;
 import task20.InfoAboutClass;
+import task24.NullPart;
+import task24.Part;
 import task25.pack.Methods;
 import task4.*;
 import task9.RecursiveHierarchy;
@@ -76,10 +78,18 @@ public class Main {
 
         InfoAboutClass.info(LinkedHashSet.class.getCanonicalName());
 
+        System.out.println();
 
         /*
         Exercise 24: (4) Add Null Objects to RegisteredFactories.java.
          */
+
+        for(int i = 0; i < 10; i++)
+            System.out.println(Part.createRandom());
+
+        // If rand didn't create null
+        NullPart nullPart = new NullPart();
+        System.out.println(nullPart);
 
 
         System.out.println();

@@ -1,15 +1,18 @@
 import task10.TrueObject;
+import task20.InfoAboutClass;
+import task25.pack.Methods;
 import task4.*;
 import task9.RecursiveHierarchy;
 
 import java.io.FileReader;
 import java.io.StringReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Member;
+import java.lang.reflect.Method;
+import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvocationTargetException, IllegalAccessException {
 
 
         /*
@@ -64,8 +67,40 @@ public class Main {
 
 
         /*
-
+        Exercise 20: (5) Look up the interface for java.lang.Class in the JDK documentation
+        from http://java.sun.com. Write a program that takes the name of a class as a command-line
+        argument, then uses the Class methods to dump all the information available for that class.
+        Test your program with a standard library class and a class you create.
          */
+
+
+        InfoAboutClass.info(LinkedHashSet.class.getCanonicalName());
+
+
+        /*
+        Exercise 24: (4) Add Null Objects to RegisteredFactories.java.
+         */
+
+
+        System.out.println();
+
+
+        /*
+        Exercise 25: (2) Create a class containing private, protected and package-access
+        methods. Write code to access these methods from outside of the class’s package.
+         */
+
+        Methods methods = new Methods();
+
+        for(Method method : methods.getClass().getDeclaredMethods()){
+            method.setAccessible(true);
+            method.invoke(methods);
+        }
+
+
+
+
+
 
 
 

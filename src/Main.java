@@ -5,6 +5,8 @@ import task24.Part;
 import task25.pack.Methods;
 import task4.*;
 import task9.RecursiveHierarchy;
+import task9.Y1;
+import task9.Y2;
 
 import java.io.FileReader;
 import java.io.StringReader;
@@ -14,7 +16,7 @@ import java.lang.reflect.Method;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) throws InvocationTargetException, IllegalAccessException {
+    public static void main(String[] args) throws InvocationTargetException, IllegalAccessException, InstantiationException {
 
 
         /*
@@ -53,17 +55,18 @@ public class Main {
 
         System.out.println("Hierarchy");
 
-        RecursiveHierarchy.hierarchy(new ArrayList<>());
+        RecursiveHierarchy.hierarchy(new Y2());
 
         System.out.println();
 
+        System.out.println();
 
         /*
         Exercise 10: (3) Write a program to determine whether an array of char is a primitive
         type or a true Object.
          */
 
-        System.out.println(TrueObject.isObject());
+        System.out.println(TrueObject.isObject(new char[]{'a','b','c','d','e','f','g'}));
 
 
 

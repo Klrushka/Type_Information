@@ -9,18 +9,14 @@ public class RecursiveHierarchy {
             System.out.println(o.getClass().getSuperclass() + "\n"
                     + Arrays.toString(o.getClass().getSuperclass().getDeclaredFields()) + "\n");
 
-           return;
+            return;
 
-        } else {
-            System.out.println(o.getClass().getSuperclass() + "\n"
-                    + Arrays.toString(o.getClass().getSuperclass().getDeclaredFields()) + "\n");
         }
+        System.out.println(o.getClass().getSuperclass() + "\n"
+                + Arrays.toString(o.getClass().getSuperclass().getDeclaredFields()) + "\n");
 
         hierarchy(o.getClass().getSuperclass().newInstance());
     }
-
-
-
 
 
 }
